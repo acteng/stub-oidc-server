@@ -33,3 +33,27 @@ Stub OIDC server for testing.
     ```
 
 1. Open http://localhost:5001
+
+## Running locally using Docker
+
+To run the server as a container:
+
+1. Build the Docker image:
+
+   ```bash
+   docker build -t oidc_server .
+   ```
+   
+1. Run the Docker image:
+
+   ```bash
+   docker run --rm -p 5001:5001 -e FLASK_SERVER_NAME=localhost:5001 oidc_server
+   ```
+   
+1. Open http://localhost:5001/.well-known/openid-configuration
+
+The server can also be run on a different port by specifying the `PORT` environment variable:
+
+```bash
+docker run --rm -p 8000:8000 -e FLASK_SERVER_NAME=localhost:8000 -e PORT=8000 oidc_server
+```
