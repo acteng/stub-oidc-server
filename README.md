@@ -32,7 +32,7 @@ Stub OIDC server for testing.
     make run
     ```
 
-1. Open http://localhost:5001
+1. Open http://localhost:5001/.well-known/openid-configuration
 
 ## Running locally using Docker
 
