@@ -65,6 +65,47 @@ The image is also available on GitHub Container registry as
 docker run --rm -p 5001:5001 -e FLASK_SERVER_NAME=localhost:5001 ghcr.io/acteng/stub-oidc-server
 ```
 
+## Configuring
+
+The server provides a Web API to configure OIDC clients and users.
+
+### Clients
+
+To register an OIDC client:
+
+```bash
+curl http://localhost:5001/clients \
+	-H 'Content-Type: application/json' \
+	-d "{
+			\"client_id\": \"test-client\",
+			\"redirect_uri\": \"http://localhost:5000/auth\",
+			\"public_key\": \"-----BEGIN PUBLIC KEY-----\n...\n-----END PUBLIC KEY-----\",
+			\"scope\": \"openid email\"
+		}"
+```
+
+To unregister all OIDC clients:
+
+```bash
+curl http://localhost:5001/clients -X DELETE
+```
+
+### Users
+
+To create a user:
+
+```bash
+curl http://localhost:5001/users \
+	-H 'Content-Type: application/json' \
+	-d "{\"id\": \"test-user\", \"email\": \"test-user@example.com\"}"
+```
+
+To delete all users:
+
+```bash
+curl http://localhost:5001/users -X DELETE
+```
+
 ## Licence
 
 [MIT License](LICENCE)
