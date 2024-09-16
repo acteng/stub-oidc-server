@@ -57,3 +57,7 @@ The server can also be run on a different port by specifying the `PORT` environm
 ```bash
 docker run --rm -p 8000:8000 -e FLASK_SERVER_NAME=localhost:8000 -e PORT=8000 oidc_server
 ```
+
+## Licence
+
+[MIT License](LICENCE)
