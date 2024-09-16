@@ -75,13 +75,13 @@ To register an OIDC client:
 
 ```bash
 curl http://localhost:5001/clients \
-	-H 'Content-Type: application/json' \
-	-d "{
-			\"client_id\": \"test-client\",
-			\"redirect_uri\": \"http://localhost:5000/auth\",
-			\"public_key\": \"-----BEGIN PUBLIC KEY-----\n...\n-----END PUBLIC KEY-----\",
-			\"scope\": \"openid email\"
-		}"
+    -H 'Content-Type: application/json' \
+    -d "{
+            \"client_id\": \"test-client\",
+            \"redirect_uri\": \"http://localhost:5000/auth\",
+            \"public_key\": \"-----BEGIN PUBLIC KEY-----\n...\n-----END PUBLIC KEY-----\",
+            \"scope\": \"openid email\"
+        }"
 ```
 
 To unregister all OIDC clients:
@@ -96,8 +96,8 @@ To create a user:
 
 ```bash
 curl http://localhost:5001/users \
-	-H 'Content-Type: application/json' \
-	-d "{\"id\": \"test-user\", \"email\": \"test-user@example.com\"}"
+    -H 'Content-Type: application/json' \
+    -d "{\"id\": \"test-user\", \"email\": \"test-user@example.com\"}"
 ```
 
 To delete all users:
