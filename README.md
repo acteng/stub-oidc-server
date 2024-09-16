@@ -97,7 +97,10 @@ To create a user:
 ```bash
 curl http://localhost:5001/users \
     -H 'Content-Type: application/json' \
-    -d "{\"id\": \"test-user\", \"email\": \"test-user@example.com\"}"
+    -d "{
+            \"id\": \"test-user\",
+            \"email\": \"test-user@example.com\"
+        }"
 ```
 
 To delete all users:
