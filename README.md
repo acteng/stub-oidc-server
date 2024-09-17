@@ -66,9 +66,26 @@ The image is also available on GitHub Container registry as
 
 ## Configuring
 
-The server provides a Web API to configure OIDC clients and users.
+The server can be configured at runtime using a Web API.
 
-### Clients
+### Web API
+
+To create a user:
+
+```bash
+curl http://localhost:5001/users \
+    -H 'Content-Type: application/json' \
+    -d "{
+            \"id\": \"test-user\",
+            \"email\": \"test-user@example.com\"
+        }"
+```
+
+To delete all users:
+
+```bash
+curl -X DELETE http://localhost:5001/users
+```
 
 To register an OIDC client:
 
@@ -87,25 +104,6 @@ To unregister all OIDC clients:
 
 ```bash
 curl -X DELETE http://localhost:5001/clients
-```
-
-### Users
-
-To create a user:
-
-```bash
-curl http://localhost:5001/users \
-    -H 'Content-Type: application/json' \
-    -d "{
-            \"id\": \"test-user\",
-            \"email\": \"test-user@example.com\"
-        }"
-```
-
-To delete all users:
-
-```bash
-curl -X DELETE http://localhost:5001/users
 ```
 
 ## Licence
