@@ -35,7 +35,7 @@ services that use it.
     make run
     ```
 
-1. Open http://localhost:5001/.well-known/openid-configuration
+1. Open http://localhost:5001
 
 ## Running locally using Docker
 
@@ -53,7 +53,7 @@ To run the server as a container:
    docker run --rm -p 5001:5001 -e FLASK_SERVER_NAME=localhost:5001 oidc_server
    ```
    
-1. Open http://localhost:5001/.well-known/openid-configuration
+1. Open http://localhost:5001
 
 The server can also be run on a different port by specifying the `PORT` environment variable:
 

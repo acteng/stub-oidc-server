@@ -2,6 +2,11 @@ from flask.testing import FlaskClient
 
 
 class TestApp:
+    def test_home(self, client: FlaskClient) -> None:
+        response = client.get("/")
+
+        assert response.text == "<h1>OIDC Server</h1>"
+
     def test_openid_configuration(self, client: FlaskClient) -> None:
         response = client.get("/.well-known/openid-configuration")
 

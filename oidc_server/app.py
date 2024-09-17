@@ -135,6 +135,10 @@ def create_app(test_config: dict[str, Any] | None = None) -> OidcServerApp:
         app.clear_clients()
         return Response(status=204)
 
+    @app.get("/")
+    def home() -> str:
+        return "<h1>OIDC Server</h1>"
+
     @app.get("/.well-known/openid-configuration")
     def openid_configuration() -> Response:
         return jsonify(
