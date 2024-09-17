@@ -1,5 +1,5 @@
 bin = .venv/bin
-packages = oidc_server
+packages = oidc_server tests
 
 clean:
 	find . -name __pycache__ -type d -prune -exec rm -rf {} \;
@@ -33,7 +33,10 @@ ruff-fix:
 
 fix: ruff-fix
 
-verify: format-check lint
+test:
+	$(bin)/pytest
+
+verify: format-check lint test
 
 run:
 	FLASK_SERVER_NAME=localhost:5001 $(bin)/flask --debug --app oidc_server.app run --port 5001

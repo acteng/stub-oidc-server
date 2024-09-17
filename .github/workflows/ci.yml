@@ -29,6 +29,9 @@ jobs:
       - name: Lint
         run: make lint
 
+      - name: Test
+        run: make test
+
       - name: Login to Container registry
         uses: docker/login-action@v3
         with:
