@@ -2,6 +2,9 @@
 
 Stub [OpenID Connect](https://openid.net/specs/openid-connect-core-1_0.html) server for testing.
 
+Primarily used to stub [GOV.UK One Login](https://docs.sign-in.service.gov.uk/) for end-to-end tests and load testing of
+services that use it.
+
 ## Prerequisites
 
 1. Install Python 3.12
