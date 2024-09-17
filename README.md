@@ -62,11 +62,7 @@ docker run --rm -p 8000:8000 -e FLASK_SERVER_NAME=localhost:8000 -e PORT=8000 oi
 ```
 
 The image is also available on GitHub Container registry as
-[acteng/stub-oidc-server](https://github.com/acteng/stub-oidc-server/pkgs/container/stub-oidc-server):
-
-```bash
-docker run --rm -p 5001:5001 -e FLASK_SERVER_NAME=localhost:5001 ghcr.io/acteng/stub-oidc-server
-```
+[ghcr.io/acteng/stub-oidc-server](https://github.com/acteng/stub-oidc-server/pkgs/container/stub-oidc-server).
 
 ## Configuring
 
