@@ -1,6 +1,6 @@
 # Stub OIDC server
 
-Stub OIDC server for testing.
+Stub [OpenID Connect](https://openid.net/specs/openid-connect-core-1_0.html) server for testing.
 
 ## Prerequisites
 
