@@ -87,7 +87,7 @@ curl http://localhost:5001/clients \
 To unregister all OIDC clients:
 
 ```bash
-curl http://localhost:5001/clients -X DELETE
+curl -X DELETE http://localhost:5001/clients
 ```
 
 ### Users
@@ -106,7 +106,7 @@ curl http://localhost:5001/users \
 To delete all users:
 
 ```bash
-curl http://localhost:5001/users -X DELETE
+curl -X DELETE http://localhost:5001/users
 ```
 
 ## Licence
