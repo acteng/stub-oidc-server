@@ -66,7 +66,16 @@ The image is also available on GitHub Container registry as
 
 ## Configuring
 
-The server can be configured at runtime using a Web API.
+The server can be configured on start up using environment variables or at runtime using a Web API.
+
+### Environment variables
+
+Use the following environment variables to create a user on start up:
+
+| Name                  | Value           |
+|-----------------------|-----------------|
+| FLASK_OIDC_USER_ID    | OIDC user id    |
+| FLASK_OIDC_USER_EMAIL | OIDC user email |
 
 ### Web API
 

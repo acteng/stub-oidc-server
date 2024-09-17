@@ -96,6 +96,9 @@ def create_app(test_config: dict[str, Any] | None = None) -> OidcServerApp:
     app.config.from_prefixed_env()
     app.config.from_mapping(test_config)
 
+    if "OIDC_USER_ID" in app.config:
+        app.add_user(StubUser(id=app.config["OIDC_USER_ID"], email=app.config["OIDC_USER_EMAIL"]))
+
     key = RSAKey.generate_key(is_private=True)
     authorization_server = app.create_authorization_server(key)
     require_oauth = app.create_resource_protector()
