@@ -70,12 +70,16 @@ The server can be configured on start up using environment variables or at runti
 
 ### Environment variables
 
-Use the following environment variables to create a user on start up:
+Use the following environment variables to create a user and register a client on start up:
 
-| Name                  | Value           |
-|-----------------------|-----------------|
-| FLASK_OIDC_USER_ID    | OIDC user id    |
-| FLASK_OIDC_USER_EMAIL | OIDC user email |
+| Name                           | Value                    |
+|--------------------------------|--------------------------|
+| FLASK_OIDC_USER_ID             | OIDC user id             |
+| FLASK_OIDC_USER_EMAIL          | OIDC user email          |
+| FLASK_OIDC_CLIENT_ID           | OIDC client id           |
+| FLASK_OIDC_CLIENT_REDIRECT_URI | OIDC client redirect URI |
+| FLASK_OIDC_CLIENT_PUBLIC_KEY   | OIDC client public key   |
+| FLASK_OIDC_CLIENT_SCOPE        | OIDC client scope        |
 
 ### Web API
 

@@ -99,6 +99,16 @@ def create_app(test_config: dict[str, Any] | None = None) -> OidcServerApp:
     if "OIDC_USER_ID" in app.config:
         app.add_user(StubUser(id=app.config["OIDC_USER_ID"], email=app.config["OIDC_USER_EMAIL"]))
 
+    if "OIDC_CLIENT_ID" in app.config:
+        app.add_client(
+            StubClient(
+                client_id=app.config["OIDC_CLIENT_ID"],
+                redirect_uri=app.config["OIDC_CLIENT_REDIRECT_URI"],
+                public_key=app.config["OIDC_CLIENT_PUBLIC_KEY"],
+                scope=app.config["OIDC_CLIENT_SCOPE"],
+            )
+        )
+
     key = RSAKey.generate_key(is_private=True)
     authorization_server = app.create_authorization_server(key)
     require_oauth = app.create_resource_protector()
